@@ -1,6 +1,6 @@
-# Content Creator Assistant - AI-Powered Content Generation
+# BasedX - AI-Powered Content Generation
 
-An intelligent content creation assistant that helps builders and developers generate engaging content for X (Twitter) and create visual assets. Features AI-powered text generation and image creation tools.
+BasedX is an intelligent content creation assistant that helps builders and developers generate engaging content for X (Twitter) and create visual assets. Features AI-powered text generation and image creation tools.
 
 ## Features
 
@@ -33,7 +33,6 @@ An intelligent content creation assistant that helps builders and developers gen
 - [Tailwind CSS](https://tailwindcss.com) - Styling
 - [Vercel AI SDK](https://vercel.com/docs/ai) - AI integration
 - [Google Gemini](https://ai.google.dev) - Text generation
-- [Google Imagen](https://cloud.google.com/vertex-ai/docs/generative-ai/image/overview) - Image generation
 - TypeScript - Type-safe development
 
 ## Getting Started
@@ -52,7 +51,7 @@ An intelligent content creation assistant that helps builders and developers gen
 
 ```bash
 git clone <your-repo-url>
-cd polarbase
+cd basedx
 npm install
 ```
 
@@ -158,7 +157,7 @@ REDIS_TOKEN=
 npm run dev
 ```
 
-## How to Use Clarity Companion
+## How to Use BasedX
 
 ### Getting Started
 
@@ -255,7 +254,7 @@ npm run dev
 ### File Structure
 
 ```
-content-creator-assistant/
+basedx/
 ├── app/
 │   ├── components/
 │   │   ├── ui/                     # shadcn/ui components
