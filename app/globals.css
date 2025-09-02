@@ -6,10 +6,11 @@
   /* Base colors */
   --background: 0 0% 100%;
   --foreground: 222.2 84% 4.9%;
+  --border: #e5e7eb;
 
   /* Component colors */
   --card: 0 0% 100%;
-  --card-foreground: 222.2 84% 4.9%;
+  --card-foreground: 222.2 84% e5e7eb4.9%;
   --popover: 0 0% 100%;
   --popover-foreground: 222.2 84% 4.9%;
 
@@ -294,5 +295,16 @@ body {
   input::placeholder,
   textarea::placeholder {
     color: hsl(var(--muted-foreground));
+  }
+}
+
+
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }

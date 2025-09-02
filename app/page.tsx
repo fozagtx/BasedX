@@ -20,10 +20,24 @@ import {
   WalletDropdown,
   WalletDropdownDisconnect,
 } from "@coinbase/onchainkit/wallet";
+import { PlusIcon, Check, ArrowUp, Square } from "lucide-react"
+import { 
+    PromptInput,
+  PromptInputAction,
+  PromptInputActions,
+  PromptInputTextarea,
+} from "@/components/ui/prompt-input";
+import { useInputHandler } from "@/hooks/useInputHandler";
 
 export default function App() {
   const { setFrameReady, isFrameReady, context } = useMiniKit();
   const [frameAdded, setFrameAdded] = useState(false);
+  const { 
+     input,
+    isLoading,
+    handleSubmit,
+    handleValueChange,
+  } = useInputHandler();
 
   const addFrame = useAddFrame();
   const openUrl = useOpenUrl();
@@ -48,7 +62,7 @@ export default function App() {
           onClick={handleAddFrame}
           className="text-[var(--app-accent)] p-4"
         >
-          <Icon name="plus" size="sm" />
+          <PlusIcon className="w-5 h-5" />
           Save Frame
         </Button>
       );
@@ -57,7 +71,8 @@ export default function App() {
     if (frameAdded) {
       return (
         <div className="flex items-center space-x-1 text-sm font-medium text-[#0052FF] animate-fade-out">
-          <Icon name="check" size="sm" className="text-[#0052FF]" />
+          {/* <Icon name="check" size="sm" className="text-[#0052FF]" /> */}
+          <Check className="w-5 h-5"/>
           <span>Saved</span>
         </div>
       );
@@ -99,7 +114,33 @@ export default function App() {
         </header>
 
         <main className="flex-1 bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm rounded-2xl p-4 shadow-lg border border-slate-200/50 dark:border-slate-700/50">
-          <ChatInterface />
+          <PromptInput
+      value={input}
+      onValueChange={handleValueChange}
+      isLoading={isLoading}
+      onSubmit={() => handleSubmit}
+      className="w-full max-w-(--breakpoint-md)"
+    >
+      <PromptInputTextarea placeholder="Ask me anything..." />
+      <PromptInputActions className="justify-end pt-2">
+        <PromptInputAction
+          tooltip={isLoading ? "Stop generation" : "Send message"}
+        >
+          <Button
+            variant="default"
+            size="icon"
+            className="h-8 w-8 rounded-full"
+            onClick={() => handleSubmit}
+          >
+            {isLoading ? (
+              <Square className="size-5 fill-current" />
+            ) : (
+              <ArrowUp className="size-5" />
+            )}
+          </Button>
+        </PromptInputAction>
+      </PromptInputActions>
+    </PromptInput>
         </main>
 
         <footer className="mt-8 pt-6 flex justify-center">
