@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,10 +8,11 @@
   /* Base colors */
   --background: 0 0% 100%;
   --foreground: 222.2 84% 4.9%;
+  --border: #e5e7eb;
 
   /* Component colors */
   --card: 0 0% 100%;
-  --card-foreground: 222.2 84% 4.9%;
+  --card-foreground: 222.2 84% e5e7eb4.9%;
   --popover: 0 0% 100%;
   --popover-foreground: 222.2 84% 4.9%;
 
@@ -107,11 +110,15 @@
 body {
   color: hsl(var(--foreground));
   background: hsl(var(--background));
-  font-family: "Geist", sans-serif;
+  font-family: "Oxanium", "Geist", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
   font-size: 80%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Oxanium", "Geist", sans-serif;
 }
 
 /* Custom animations and effects */
@@ -294,5 +301,16 @@ body {
   input::placeholder,
   textarea::placeholder {
     color: hsl(var(--muted-foreground));
+  }
+}
+
+
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }

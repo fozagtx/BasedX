@@ -11,7 +11,8 @@ const config: Config = {
   	extend: {
   		colors: {
   			background: 'var(--background)',
-  			foreground: 'var(--foreground)'
+  			foreground: 'var(--foreground)',
+			border: 'var(--border)'
   		},
   		animation: {
   			'fade-out': '1s fadeOut 3s ease-out forwards'
