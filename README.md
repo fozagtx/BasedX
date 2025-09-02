@@ -99,6 +99,9 @@ Once your frame is ready, cast it on Farcaster to start using it!
 
 1. Visit [Google AI Studio](https://makersuite.google.com/app/apikey)
 2. Create a new API key
+#### Google Gemini
+
+1. Visit [Google AI Studio](https://makersuite
 3. Add it to your `.env.local` as `NEXT_PUBLIC_GEMINI_API_KEY`
 
 #### ElevenLabs
